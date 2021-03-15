@@ -53,7 +53,7 @@ void showMenuAnaliseCombinatoria()
   puts("3. Combinacao Simples: C(n, k)");
   puts("4. Arranjo com Repeticao: AR(n, k)");
   puts("5. Combinacao com Repeticao: CR(n, k)");
-  puts("6. Permutacao com Repeticao: P(n, k1, ⋯ , kp)");
+  puts("6. Permutacao com Repeticao: P(n, k1, ..., kp)");
   puts("7. Voltar ao Menu Anterior");
 
   handleMenuAnaliseCombinatoriaInput();
