@@ -4,6 +4,31 @@
 #include "menu_analise_combinatoria.h"
 #include "menu.h"
 
+void permutacaoSimples()
+{
+  float n;
+  int aux, resultado;
+
+  scanf("%f", &n);
+
+  aux = n;
+
+  if (n < 0 || n != aux)
+  {
+    puts("Ops, insira um numero natural:");
+    permutacaoSimples();
+  }
+  else
+  {
+    for (resultado = 1; n > 1; n--)
+    {
+      resultado = resultado * n;
+    }
+
+    printf("Resultado: %d", resultado);
+  }
+}
+
 void handleMenuAnaliseCombinatoriaInput()
 {
   char selectedOption[1];
@@ -12,7 +37,9 @@ void handleMenuAnaliseCombinatoriaInput()
 
   if (strcmp(selectedOption, "1") == 0)
   {
-    puts("Selecionou 1");
+    puts("Insira o valor de n, sabendo que n deve ser um numero natural:");
+
+    permutacaoSimples();
   }
   else if (strcmp(selectedOption, "2") == 0)
   {
