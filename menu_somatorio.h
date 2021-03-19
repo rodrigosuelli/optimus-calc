@@ -1,7 +1,7 @@
-#ifndef MENU_SOMATORIO_H
-#define MENU_SOMATORIO_H
+#ifndef MENU_SOMATORIO_H_INCLUDED
+#define MENU_SOMATORIO_H_INCLUDED
 
 void showMenuSomatorio();
 void handleMenuSomatorioInput();
 
-#endif
+#endif // MENU_SOMATORIO_H_INCLUDED
