@@ -1,3 +1,7 @@
-.vscode
+/.vscode
+/bin
+/obj
 *.exe
 tempCodeRunnerFile.c
+optimus-calc.dependency
+optimus-calc.layout

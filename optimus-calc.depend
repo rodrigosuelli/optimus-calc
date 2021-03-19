@@ -1,7 +1,0 @@
-# depslib dependency file v1.0
-1616164845 source:c:\users\rodrigosuelli\blocks-projects\optimus-calc\main.c
-	<stdio.h>
-	"menu.h"
-
-1616165131 c:\users\rodrigosuelli\blocks-projects\optimus-calc\menu.h
-
