@@ -6,20 +6,6 @@
 #include "menu_logica_proposicional.h"
 #include "menu_analise_combinatoria.h"
 
-void showMainMenu()
-{
-  puts("%%%%%%%%%%%%%%%%%%%%%%");
-  puts("%    OPTIMUS CALC    %");
-  puts("%%%%%%%%%%%%%%%%%%%%%%");
-  puts("     MENU PRINCIPAL");
-  puts("1. Somatorio");
-  puts("2. Logica Proposicional");
-  puts("3. Analise Combinatoria");
-  puts("4. Sair");
-
-  handleMainMenuInput();
-}
-
 void handleMainMenuInput()
 {
   char selectedOption[1];
@@ -47,4 +33,18 @@ void handleMainMenuInput()
     puts("Ops, insira uma opcao valida:");
     handleMainMenuInput();
   }
+}
+
+void showMainMenu()
+{
+  puts("%%%%%%%%%%%%%%%%%%%%%%");
+  puts("%    OPTIMUS CALC    %");
+  puts("%%%%%%%%%%%%%%%%%%%%%%");
+  puts("     MENU PRINCIPAL");
+  puts("1. Somatorio");
+  puts("2. Logica Proposicional");
+  puts("3. Analise Combinatoria");
+  puts("4. Sair");
+
+  handleMainMenuInput();
 }
