@@ -5,4 +5,5 @@
 *.o
 tempCodeRunnerFile.c
 optimus-calc.dependency
+optimus-calc.depend
 optimus-calc.layout
