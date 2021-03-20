@@ -1,6 +1,6 @@
 # Optimus-Calc
 
-<img width="300px" height="300px" src="./.github/optimus-prime.png" alt="optimus-prime">
+<img width="250px" height="250px" src="./.github/optimus-prime.png" alt="optimus-prime">
 
 ## Submenu Somátorio
 
