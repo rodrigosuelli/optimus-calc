@@ -7,7 +7,7 @@
 void permutacaoSimples()
 {
   float n;
-  int aux, resultado;
+  int aux, fat;
 
   scanf("%f", &n);
 
@@ -20,12 +20,12 @@ void permutacaoSimples()
   }
   else
   {
-    for (resultado = 1; n > 1; n--)
+    for (fat = 1; n > 1; n--)
     {
-      resultado = resultado * n;
+      fat = fat * n;
     }
 
-    printf("Resultado: %d", resultado);
+    printf("Resultado: %d", fat);
   }
 }
 
