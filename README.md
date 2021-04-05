@@ -27,3 +27,12 @@
 - [ ] Arranjo com Repetição: 𝐴𝑅(𝑛, 𝑘)
 - [ ] Combinação com Repetição: 𝐶𝑅(𝑛, 𝑘)
 - [ ] Permutação com Repetição: 𝑃(𝑛, 𝑘1, ⋯ , 𝑘𝑝)
+
+## 🤔 Como contribuir
+
+1. Faça um fork desse repositório
+2. Faça um clone do seu fork (`git clone url-do-seu-fork && cd optimus-calc`)
+3. Crie uma branch com sua feature ou correção de bugs (`git checkout -b minha-branch`)
+4. Faça commit das suas alterações (`git commit -m 'feature: minhas alterações'`)
+5. Faça push para a sua branch (`git push origin minha-branch`)
+6. Abra sua Pull Request no repositório que você fez o fork
