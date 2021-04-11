@@ -1,49 +1,96 @@
 #include <stdio.h>
 #include <string.h>
+#include <stdbool.h>
 
 #include "menu_analise_combinatoria.h"
 #include "menu.h"
 
-void permutacaoSimples()
+float getUserInput(char varName[1])
 {
   float n;
-  int aux, fat;
 
+  printf("Insira o valor de %s, sabendo que %s deve ser um numero natural:\n", varName, varName);
   scanf("%f", &n);
 
-  aux = n;
+  return n;
+}
+
+bool isInteger(float n)
+{
+  int aux = n;
 
   if (n < 0 || n != aux)
   {
-    puts("Ops, insira um numero natural:");
-    permutacaoSimples();
+    return false;
   }
-  else
-  {
-    for (fat = 1; n > 1; n--)
-    {
-      fat = fat * n;
-    }
 
-    printf("Resultado: %d", fat);
-  }
+  return true;
 }
 
-void handleMenuAnaliseCombinatoriaInput()
+int arranjoSimples(float n, float k)
 {
-  char selectedOption[1];
+  int nFatorial, subtracaoFatorial, resultado;
+  int subtracao = n - k;
 
-  scanf("%s", &selectedOption);
+  for (nFatorial = 1; n > 1; n--)
+  {
+    nFatorial = nFatorial * n;
+  }
 
+  for (subtracaoFatorial = 1; subtracao > 1; subtracao--)
+  {
+    subtracaoFatorial = subtracaoFatorial * subtracao;
+  }
+
+  resultado = nFatorial / subtracaoFatorial;
+
+  return resultado;
+}
+
+int permutacaoSimples(float n)
+{
+  int fat;
+
+  for (fat = 1; n > 1; n--)
+  {
+    fat = fat * n;
+  }
+
+  return fat;
+}
+
+void handleMenuAnaliseCombinatoriaInput(char selectedOption[1])
+{
   if (strcmp(selectedOption, "1") == 0)
   {
-    puts("Insira o valor de n, sabendo que n deve ser um numero natural:");
+    float n = getUserInput("n");
 
-    permutacaoSimples();
+    if (isInteger(n))
+    {
+      printf("Resultado: %d", permutacaoSimples(n));
+    }
+    else
+    {
+      puts("Ops, entrada invalida.");
+
+      handleMenuAnaliseCombinatoriaInput("1");
+    }
   }
   else if (strcmp(selectedOption, "2") == 0)
   {
-    puts("Selecionou 2");
+    float n = getUserInput("n");
+    float k = getUserInput("k");
+
+    if (isInteger(n) && isInteger(k))
+    {
+      printf("Resultado: %d", arranjoSimples(n, k));
+    }
+    else
+    {
+      puts("Ops, entrada invalida.");
+
+      handleMenuAnaliseCombinatoriaInput("2");
+    }
   }
   else if (strcmp(selectedOption, "3") == 0)
   {
@@ -68,8 +115,18 @@ void handleMenuAnaliseCombinatoriaInput()
   else
   {
     puts("Ops, insira uma opcao valida:");
-    handleMenuAnaliseCombinatoriaInput();
+
+    getMenuAnaliseCombinatoriaInput();
   }
+}
+
+void getMenuAnaliseCombinatoriaInput()
+{
+  char selectedOption[1];
+
+  scanf("%s", &selectedOption);
+
+  handleMenuAnaliseCombinatoriaInput(selectedOption);
 }
 
 void showMenuAnaliseCombinatoria()
@@ -83,5 +140,5 @@ void showMenuAnaliseCombinatoria()
   puts("6. Permutacao com Repeticao: P(n, k1, ..., kp)");
   puts("7. Voltar ao Menu Anterior");
 
-  handleMenuAnaliseCombinatoriaInput();
+  getMenuAnaliseCombinatoriaInput();
 }

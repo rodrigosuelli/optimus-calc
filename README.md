@@ -22,7 +22,7 @@
 ## Submenu Análise Combinatória
 
 - [x] Permutação Simples: 𝑃(𝑛)
-- [ ] Arranjo Simples: 𝐴(𝑛, 𝑘)
+- [x] Arranjo Simples: 𝐴(𝑛, 𝑘)
 - [ ] Combinação Simples: 𝐶(𝑛, 𝑘)
 - [ ] Arranjo com Repetição: 𝐴𝑅(𝑛, 𝑘)
 - [ ] Combinação com Repetição: 𝐶𝑅(𝑛, 𝑘)
