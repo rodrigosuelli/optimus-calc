@@ -1,0 +1,11 @@
+{
+  "code-runner.executorMap": {
+    "c": "cd $dir && gcc *.c -o $fileNameWithoutExt && $dir$fileNameWithoutExt"
+  },
+  "files.associations": {
+    "string.h": "c",
+    "stdbool.h": "c",
+    "menu.h": "c",
+    "menu_analise_combinatoria.h": "c"
+  }
+}
