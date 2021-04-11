@@ -29,6 +29,32 @@ bool isInteger(float n)
   return true;
 }
 
+int combinacaoSimples(float n, float k)
+{
+  int nFatorial, kFatorial, multiplicacao, resultado, subtracaoFatorial;
+  int subtracao = n - k;
+
+  for (nFatorial = 1; n > 1; n--)
+  {
+    nFatorial = nFatorial * n;
+  }
+
+  for (kFatorial = 1; k > 1; k--)
+  {
+    kFatorial = kFatorial * k;
+  }
+
+  for (subtracaoFatorial = 1; subtracao > 1; subtracao--)
+  {
+    subtracaoFatorial = subtracaoFatorial * subtracao;
+  }
+
+  multiplicacao = kFatorial * subtracaoFatorial;
+  resultado = nFatorial / multiplicacao;
+
+  return resultado;
+}
+
 int arranjoSimples(float n, float k)
 {
   int nFatorial, subtracaoFatorial, resultado;
@@ -105,7 +131,19 @@ void handleMenuAnaliseCombinatoriaInput(char selectedOption[1])
   }
   else if (strcmp(selectedOption, "3") == 0)
   {
-    puts("Selecionou 3");
+    float n = getUserInput("n");
+    float k = getUserInput("k");
+
+    if (isInteger(n) && isInteger(k))
+    {
+      printf("Resultado: %d", combinacaoSimples(n, k));
+    }
+    else
+    {
+      puts("Ops, entrada invalida.");
+
+      handleMenuAnaliseCombinatoriaInput("3");
+    }
   }
   else if (strcmp(selectedOption, "4") == 0)
   {
