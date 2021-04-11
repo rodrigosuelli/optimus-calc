@@ -5,6 +5,8 @@
 #include "menu_analise_combinatoria.h"
 #include "menu.h"
 
+void handleMenuAnaliseCombinatoriaInput(char selectedOption[1]);
+
 float getUserInput(char varName[1])
 {
   float n;
