@@ -59,6 +59,15 @@ int permutacaoSimples(float n)
   return fat;
 }
 
+void getMenuAnaliseCombinatoriaInput()
+{
+  char selectedOption[1];
+
+  scanf("%s", &selectedOption);
+
+  handleMenuAnaliseCombinatoriaInput(selectedOption);
+}
+
 void handleMenuAnaliseCombinatoriaInput(char selectedOption[1])
 {
   if (strcmp(selectedOption, "1") == 0)
@@ -118,15 +127,6 @@ void handleMenuAnaliseCombinatoriaInput(char selectedOption[1])
 
     getMenuAnaliseCombinatoriaInput();
   }
-}
-
-void getMenuAnaliseCombinatoriaInput()
-{
-  char selectedOption[1];
-
-  scanf("%s", &selectedOption);
-
-  handleMenuAnaliseCombinatoriaInput(selectedOption);
 }
 
 void showMenuAnaliseCombinatoria()
