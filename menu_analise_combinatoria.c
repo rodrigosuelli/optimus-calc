@@ -2,6 +2,7 @@
 #include <string.h>
 #include <stdbool.h>
 #include <stdint.h>
+#include <math.h>
 
 #include "menu_analise_combinatoria.h"
 #include "menu.h"
@@ -14,6 +15,11 @@ uint64_t fatorial(uint64_t n)
     return 1;
   else
     return n * fatorial(n - 1);
+}
+
+uint64_t arranjoRepeticao(int n, int k)
+{
+  return pow(n, k);
 }
 
 uint64_t combinacaoSimples(int n, int k)
@@ -118,7 +124,19 @@ void handleMenuAnaliseCombinatoriaInput(char selectedOption[1])
   }
   else if (strcmp(selectedOption, "4") == 0)
   {
-    puts("Selecionou 4");
+    float n = getUserInput("n");
+    float k = getUserInput("k");
+
+    if (isInteger(n) && isInteger(k))
+    {
+      printf("Resultado: %llu", arranjoRepeticao(n, k));
+    }
+    else
+    {
+      puts("Ops, entrada invalida.");
+
+      handleMenuAnaliseCombinatoriaInput("4");
+    }
   }
   else if (strcmp(selectedOption, "5") == 0)
   {
