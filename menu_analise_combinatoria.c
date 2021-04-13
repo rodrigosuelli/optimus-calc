@@ -7,6 +7,14 @@
 
 void handleMenuAnaliseCombinatoriaInput(char selectedOption[1]);
 
+int fatorial(float n)
+{
+  if (n == 0)
+    return 1;
+  else
+    return n * fatorial(n - 1);
+}
+
 float getUserInput(char varName[1])
 {
   float n;
@@ -22,69 +30,31 @@ bool isInteger(float n)
   int aux = n;
 
   if (n < 0 || n != aux)
-  {
     return false;
-  }
-
-  return true;
+  else
+    return true;
 }
 
 int combinacaoSimples(float n, float k)
 {
-  int nFatorial, kFatorial, multiplicacao, resultado, subtracaoFatorial;
-  int subtracao = n - k;
+  int nFatorial = fatorial(n);
+  int kFatorial = fatorial(k);
+  int subtracaoFatorial = fatorial(n - k);
 
-  for (nFatorial = 1; n > 1; n--)
-  {
-    nFatorial = nFatorial * n;
-  }
-
-  for (kFatorial = 1; k > 1; k--)
-  {
-    kFatorial = kFatorial * k;
-  }
-
-  for (subtracaoFatorial = 1; subtracao > 1; subtracao--)
-  {
-    subtracaoFatorial = subtracaoFatorial * subtracao;
-  }
-
-  multiplicacao = kFatorial * subtracaoFatorial;
-  resultado = nFatorial / multiplicacao;
-
-  return resultado;
+  return nFatorial / (kFatorial * subtracaoFatorial);
 }
 
 int arranjoSimples(float n, float k)
 {
-  int nFatorial, subtracaoFatorial, resultado;
-  int subtracao = n - k;
+  int nFatorial = fatorial(n);
+  int subtracaoFatorial = fatorial(n - k);
 
-  for (nFatorial = 1; n > 1; n--)
-  {
-    nFatorial = nFatorial * n;
-  }
-
-  for (subtracaoFatorial = 1; subtracao > 1; subtracao--)
-  {
-    subtracaoFatorial = subtracaoFatorial * subtracao;
-  }
-
-  resultado = nFatorial / subtracaoFatorial;
-
-  return resultado;
+  return nFatorial / subtracaoFatorial;
 }
 
 int permutacaoSimples(float n)
 {
-  int fat;
-
-  for (fat = 1; n > 1; n--)
-  {
-    fat = fat * n;
-  }
-
-  return fat;
+  return fatorial(n);
 }
 
 void getMenuAnaliseCombinatoriaInput()
