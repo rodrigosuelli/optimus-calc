@@ -1,13 +1,14 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdbool.h>
+#include <stdint.h>
 
 #include "menu_analise_combinatoria.h"
 #include "menu.h"
 
 void handleMenuAnaliseCombinatoriaInput(char selectedOption[1]);
 
-int fatorial(float n)
+uint64_t fatorial(uint64_t n)
 {
   if (n == 0)
     return 1;
@@ -35,24 +36,24 @@ bool isInteger(float n)
     return true;
 }
 
-int combinacaoSimples(float n, float k)
+uint64_t combinacaoSimples(int n, int k)
 {
-  int nFatorial = fatorial(n);
-  int kFatorial = fatorial(k);
-  int subtracaoFatorial = fatorial(n - k);
+  uint64_t nFatorial = fatorial(n);
+  uint64_t kFatorial = fatorial(k);
+  uint64_t subtracaoFatorial = fatorial(n - k);
 
   return nFatorial / (kFatorial * subtracaoFatorial);
 }
 
-int arranjoSimples(float n, float k)
+uint64_t arranjoSimples(int n, int k)
 {
-  int nFatorial = fatorial(n);
-  int subtracaoFatorial = fatorial(n - k);
+  uint64_t nFatorial = fatorial(n);
+  uint64_t subtracaoFatorial = fatorial(n - k);
 
   return nFatorial / subtracaoFatorial;
 }
 
-int permutacaoSimples(float n)
+uint64_t permutacaoSimples(int n)
 {
   return fatorial(n);
 }
@@ -74,7 +75,7 @@ void handleMenuAnaliseCombinatoriaInput(char selectedOption[1])
 
     if (isInteger(n))
     {
-      printf("Resultado: %d", permutacaoSimples(n));
+      printf("Resultado: %llu", permutacaoSimples(n));
     }
     else
     {
@@ -90,7 +91,7 @@ void handleMenuAnaliseCombinatoriaInput(char selectedOption[1])
 
     if (isInteger(n) && isInteger(k))
     {
-      printf("Resultado: %d", arranjoSimples(n, k));
+      printf("Resultado: %llu", arranjoSimples(n, k));
     }
     else
     {
@@ -106,7 +107,7 @@ void handleMenuAnaliseCombinatoriaInput(char selectedOption[1])
 
     if (isInteger(n) && isInteger(k))
     {
-      printf("Resultado: %d", combinacaoSimples(n, k));
+      printf("Resultado: %llu", combinacaoSimples(n, k));
     }
     else
     {
