@@ -16,26 +16,6 @@ uint64_t fatorial(uint64_t n)
     return n * fatorial(n - 1);
 }
 
-float getUserInput(char varName[1])
-{
-  float n;
-
-  printf("Insira o valor de %s, sabendo que %s deve ser um numero natural:\n", varName, varName);
-  scanf("%f", &n);
-
-  return n;
-}
-
-bool isInteger(float n)
-{
-  int aux = n;
-
-  if (n < 0 || n != aux)
-    return false;
-  else
-    return true;
-}
-
 uint64_t combinacaoSimples(int n, int k)
 {
   uint64_t nFatorial = fatorial(n);
@@ -56,6 +36,26 @@ uint64_t arranjoSimples(int n, int k)
 uint64_t permutacaoSimples(int n)
 {
   return fatorial(n);
+}
+
+bool isInteger(float n)
+{
+  int aux = n;
+
+  if (n < 0 || n != aux)
+    return false;
+  else
+    return true;
+}
+
+float getUserInput(char varName[1])
+{
+  float n;
+
+  printf("Insira o valor de %s, sabendo que %s deve ser um numero natural:\n", varName, varName);
+  scanf("%f", &n);
+
+  return n;
 }
 
 void getMenuAnaliseCombinatoriaInput()
