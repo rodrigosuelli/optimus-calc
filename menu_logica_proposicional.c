@@ -4,12 +4,19 @@
 #include "menu_logica_proposicional.h"
 #include "menu.h"
 
-void handleMenuLogicaProposicionalInput()
+void handleMenuLogicaProposicionalInput(char selectedOption[1]);
+
+void getMenuLogicaProposicionalInput()
 {
   char selectedOption[1];
 
   scanf("%s", &selectedOption);
 
+  handleMenuLogicaProposicionalInput(selectedOption);
+}
+
+void handleMenuLogicaProposicionalInput(char selectedOption[1])
+{
   if (strcmp(selectedOption, "1") == 0)
   {
     puts("Selecionou 1");
@@ -45,7 +52,8 @@ void handleMenuLogicaProposicionalInput()
   else
   {
     puts("Ops, insira uma opcao valida:");
-    handleMenuLogicaProposicionalInput();
+
+    getMenuLogicaProposicionalInput();
   }
 }
 
@@ -61,5 +69,5 @@ void showMenuLogicaProposicional()
   puts("7. p <-> q");
   puts("8. Voltar ao Menu Anterior");
 
-  handleMenuLogicaProposicionalInput();
+  getMenuLogicaProposicionalInput();
 }
