@@ -75,9 +75,11 @@ void getMenuAnaliseCombinatoriaInput()
 
 void handleMenuAnaliseCombinatoriaInput(char selectedOption[1])
 {
+  float n, k;
+
   if (strcmp(selectedOption, "1") == 0)
   {
-    float n = getUserInput("n");
+    n = getUserInput("n");
 
     if (isInteger(n))
     {
@@ -92,8 +94,8 @@ void handleMenuAnaliseCombinatoriaInput(char selectedOption[1])
   }
   else if (strcmp(selectedOption, "2") == 0)
   {
-    float n = getUserInput("n");
-    float k = getUserInput("k");
+    n = getUserInput("n");
+    k = getUserInput("k");
 
     if (isInteger(n) && isInteger(k))
     {
@@ -108,8 +110,8 @@ void handleMenuAnaliseCombinatoriaInput(char selectedOption[1])
   }
   else if (strcmp(selectedOption, "3") == 0)
   {
-    float n = getUserInput("n");
-    float k = getUserInput("k");
+    n = getUserInput("n");
+    k = getUserInput("k");
 
     if (isInteger(n) && isInteger(k))
     {
@@ -124,8 +126,8 @@ void handleMenuAnaliseCombinatoriaInput(char selectedOption[1])
   }
   else if (strcmp(selectedOption, "4") == 0)
   {
-    float n = getUserInput("n");
-    float k = getUserInput("k");
+    n = getUserInput("n");
+    k = getUserInput("k");
 
     if (isInteger(n) && isInteger(k))
     {
