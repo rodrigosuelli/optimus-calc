@@ -63,7 +63,7 @@ bool isValid(unsigned char userInput)
     return true;
 }
 
-void getLogicaProposicionalInput()
+void getMenuLogicaProposicionalInput()
 {
   unsigned char selectedOption;
   char enterKey;
@@ -72,11 +72,11 @@ void getLogicaProposicionalInput()
   {
     puts("Ops, insira uma opcao valida:");
     fflush(stdin);
-    getLogicaProposicionalInput();
+    getMenuLogicaProposicionalInput();
   }
   else
   {
-    handleLogicaProposicionalInput(selectedOption);
+    handleMenuLogicaProposicionalInput(selectedOption);
   }
 }
 
