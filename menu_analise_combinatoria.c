@@ -54,14 +54,23 @@ bool isInteger(float n)
     return true;
 }
 
-float getUserInput(char varName[1])
+unsigned int getInputAndCheckIsValid(char varName[1])
 {
-  float n;
+  int n;
+  char enterKey;
 
   printf("Insira o valor de %s, sabendo que %s deve ser um numero natural:\n", varName, varName);
-  scanf("%f", &n);
 
-  return n;
+  if (scanf("%d%c", &n, &enterKey) != 2 || enterKey != '\n' || n < 0)
+  {
+    puts("Ops, entrada invalida.");
+    fflush(stdin);
+    getInputAndCheckIsValid(varName);
+  }
+  else
+  {
+    return n;
+  }
 }
 
 void getMenuAnaliseCombinatoriaInput()
@@ -75,70 +84,34 @@ void getMenuAnaliseCombinatoriaInput()
 
 void handleMenuAnaliseCombinatoriaInput(char selectedOption[1])
 {
-  float n, k;
+  int n, k;
 
   if (strcmp(selectedOption, "1") == 0)
   {
-    n = getUserInput("n");
+    n = getInputAndCheckIsValid("n");
 
-    if (isInteger(n))
-    {
-      printf("Resultado: %llu", permutacaoSimples(n));
-    }
-    else
-    {
-      puts("Ops, entrada invalida.");
-
-      handleMenuAnaliseCombinatoriaInput("1");
-    }
+    printf("Resultado: %llu", permutacaoSimples(n));
   }
   else if (strcmp(selectedOption, "2") == 0)
   {
-    n = getUserInput("n");
-    k = getUserInput("k");
+    n = getInputAndCheckIsValid("n");
+    k = getInputAndCheckIsValid("k");
 
-    if (isInteger(n) && isInteger(k))
-    {
-      printf("Resultado: %llu", arranjoSimples(n, k));
-    }
-    else
-    {
-      puts("Ops, entrada invalida.");
-
-      handleMenuAnaliseCombinatoriaInput("2");
-    }
+    printf("Resultado: %llu", arranjoSimples(n, k));
   }
   else if (strcmp(selectedOption, "3") == 0)
   {
-    n = getUserInput("n");
-    k = getUserInput("k");
+    n = getInputAndCheckIsValid("n");
+    k = getInputAndCheckIsValid("k");
 
-    if (isInteger(n) && isInteger(k))
-    {
-      printf("Resultado: %llu", combinacaoSimples(n, k));
-    }
-    else
-    {
-      puts("Ops, entrada invalida.");
-
-      handleMenuAnaliseCombinatoriaInput("3");
-    }
+    printf("Resultado: %llu", combinacaoSimples(n, k));
   }
   else if (strcmp(selectedOption, "4") == 0)
   {
-    n = getUserInput("n");
-    k = getUserInput("k");
+    n = getInputAndCheckIsValid("n");
+    k = getInputAndCheckIsValid("k");
 
-    if (isInteger(n) && isInteger(k))
-    {
-      printf("Resultado: %llu", arranjoRepeticao(n, k));
-    }
-    else
-    {
-      puts("Ops, entrada invalida.");
-
-      handleMenuAnaliseCombinatoriaInput("4");
-    }
+    printf("Resultado: %llu", arranjoRepeticao(n, k));
   }
   else if (strcmp(selectedOption, "5") == 0)
   {
