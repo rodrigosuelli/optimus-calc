@@ -25,7 +25,7 @@
 - [x] Arranjo Simples: 𝐴(𝑛, 𝑘)
 - [x] Combinação Simples: 𝐶(𝑛, 𝑘)
 - [x] Arranjo com Repetição: 𝐴𝑅(𝑛, 𝑘)
-- [ ] Combinação com Repetição: 𝐶𝑅(𝑛, 𝑘)
+- [x] Combinação com Repetição: 𝐶𝑅(𝑛, 𝑘)
 - [ ] Permutação com Repetição: 𝑃(𝑛, 𝑘1, ⋯ , 𝑘𝑝)
 
 ## 🤔 Como contribuir

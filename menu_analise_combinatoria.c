@@ -17,6 +17,11 @@ uint64_t fatorial(uint64_t n)
     return n * fatorial(n - 1);
 }
 
+uint64_t combinacaoRepeticao(int n, int k)
+{
+  return fatorial(n + k - 1) / (fatorial(k) * fatorial(n - 1));
+}
+
 uint64_t arranjoRepeticao(int n, int k)
 {
   return pow(n, k);
@@ -102,7 +107,7 @@ void handleMenuAnaliseCombinatoriaInput(unsigned char selectedOption)
     printf("Resultado: %llu", arranjoRepeticao(n, k));
     break;
   case 5:
-    puts("Selecionou 5");
+    printf("Resultado: %llu", combinacaoRepeticao(n, k));
     break;
   case 6:
     puts("Selecionou 6");
