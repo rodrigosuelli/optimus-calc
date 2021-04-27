@@ -37,16 +37,6 @@ uint64_t permutacaoSimples(int n)
   return fatorial(n);
 }
 
-bool isInteger(float n)
-{
-  int aux = n;
-
-  if (n < 0 || n != aux)
-    return false;
-  else
-    return true;
-}
-
 unsigned int getInputAndCheckIsValid(char varName[1])
 {
   int n;
