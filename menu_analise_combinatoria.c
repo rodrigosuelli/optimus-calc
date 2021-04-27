@@ -81,7 +81,7 @@ void handleMenuAnaliseCombinatoriaInput(unsigned char selectedOption)
   {
     n = getInputAndCheckIsValid("n");
   }
-  else
+  else if (selectedOption != 7)
   {
     n = getInputAndCheckIsValid("n");
     k = getInputAndCheckIsValid("k");
