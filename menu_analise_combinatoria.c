@@ -7,7 +7,7 @@
 #include "menu_analise_combinatoria.h"
 #include "menu.h"
 
-void handleMenuAnaliseCombinatoriaInput(char selectedOption[1]);
+void handleMenuAnaliseCombinatoriaInput(unsigned char selectedOption);
 
 uint64_t fatorial(uint64_t n)
 {
@@ -75,61 +75,58 @@ unsigned int getInputAndCheckIsValid(char varName[1])
 
 void getMenuAnaliseCombinatoriaInput()
 {
-  char selectedOption[1];
+  unsigned char selectedOption;
+  char enterKey;
 
-  scanf("%s", &selectedOption);
-
-  handleMenuAnaliseCombinatoriaInput(selectedOption);
-}
-
-void handleMenuAnaliseCombinatoriaInput(char selectedOption[1])
-{
-  int n, k;
-
-  if (strcmp(selectedOption, "1") == 0)
+  if (scanf("%hhu%c", &selectedOption, &enterKey) != 2 || enterKey != '\n' || selectedOption < 1 || selectedOption > 7)
   {
-    n = getInputAndCheckIsValid("n");
-
-    printf("Resultado: %llu", permutacaoSimples(n));
-  }
-  else if (strcmp(selectedOption, "2") == 0)
-  {
-    n = getInputAndCheckIsValid("n");
-    k = getInputAndCheckIsValid("k");
-
-    printf("Resultado: %llu", arranjoSimples(n, k));
-  }
-  else if (strcmp(selectedOption, "3") == 0)
-  {
-    n = getInputAndCheckIsValid("n");
-    k = getInputAndCheckIsValid("k");
-
-    printf("Resultado: %llu", combinacaoSimples(n, k));
-  }
-  else if (strcmp(selectedOption, "4") == 0)
-  {
-    n = getInputAndCheckIsValid("n");
-    k = getInputAndCheckIsValid("k");
-
-    printf("Resultado: %llu", arranjoRepeticao(n, k));
-  }
-  else if (strcmp(selectedOption, "5") == 0)
-  {
-    puts("Selecionou 5");
-  }
-  else if (strcmp(selectedOption, "6") == 0)
-  {
-    puts("Selecionou 6");
-  }
-  else if (strcmp(selectedOption, "7") == 0)
-  {
-    showMainMenu();
+    puts("Ops, insira uma opcao valida:");
+    fflush(stdin);
+    getMenuAnaliseCombinatoriaInput();
   }
   else
   {
-    puts("Ops, insira uma opcao valida:");
+    handleMenuAnaliseCombinatoriaInput(selectedOption);
+  }
+}
 
-    getMenuAnaliseCombinatoriaInput();
+void handleMenuAnaliseCombinatoriaInput(unsigned char selectedOption)
+{
+  int n, k;
+
+  if (selectedOption == 1)
+  {
+    n = getInputAndCheckIsValid("n");
+  }
+  else
+  {
+    n = getInputAndCheckIsValid("n");
+    k = getInputAndCheckIsValid("k");
+  }
+
+  switch (selectedOption)
+  {
+  case 1:
+    printf("Resultado: %llu", permutacaoSimples(n));
+    break;
+  case 2:
+    printf("Resultado: %llu", arranjoSimples(n, k));
+    break;
+  case 3:
+    printf("Resultado: %llu", combinacaoSimples(n, k));
+    break;
+  case 4:
+    printf("Resultado: %llu", arranjoRepeticao(n, k));
+    break;
+  case 5:
+    puts("Selecionou 5");
+    break;
+  case 6:
+    puts("Selecionou 6");
+    break;
+  case 7:
+    showMainMenu();
+    break;
   }
 }
 
