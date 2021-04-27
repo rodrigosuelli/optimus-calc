@@ -5,7 +5,7 @@
 #include "menu_logica_proposicional.h"
 #include "menu.h"
 
-void handleMenuLogicaProposicionalInput(char selectedOption[1]);
+void handleMenuLogicaProposicionalInput(unsigned char selectedOption);
 
 char equivalencia(unsigned char p, unsigned char q)
 {
@@ -63,155 +63,89 @@ bool isValid(unsigned char userInput)
     return true;
 }
 
-void getMenuLogicaProposicionalInput()
+void getLogicaProposicionalInput()
 {
-  char selectedOption[1];
+  unsigned char selectedOption;
+  char enterKey;
 
-  scanf("%s", &selectedOption);
-
-  handleMenuLogicaProposicionalInput(selectedOption);
-}
-
-void handleMenuLogicaProposicionalInput(char selectedOption[1])
-{
-  int p, q;
-
-  if (strcmp(selectedOption, "1") == 0)
+  if (scanf("%hhu%c", &selectedOption, &enterKey) != 2 || enterKey != '\n' || selectedOption < 1 || selectedOption > 8)
   {
-    puts("Insira o valor de p (0 ou 1):");
-    scanf("%d", &p);
-
-    if (isValid(p))
-    {
-      printf("%c", negacao(p));
-    }
-    else
-    {
-      puts("Ops, entrada invalida.");
-
-      handleMenuLogicaProposicionalInput("1");
-    }
-  }
-  else if (strcmp(selectedOption, "2") == 0)
-  {
-    puts("Insira o valor de q (0 ou 1):");
-    scanf("%d", &q);
-
-    if (isValid(q))
-    {
-      printf("%c", negacao(q));
-    }
-    else
-    {
-      puts("Ops, entrada invalida.");
-
-      handleMenuLogicaProposicionalInput("2");
-    }
-  }
-  else if (strcmp(selectedOption, "3") == 0)
-  {
-    puts("Insira o valor de p (0 ou 1):");
-    scanf("%d", &p);
-
-    puts("Insira o valor de q (0 ou 1):");
-    scanf("%d", &q);
-
-    if (isValid(p) && isValid(q))
-    {
-      printf("%c", conjuncao(p, q));
-    }
-    else
-    {
-      puts("Ops, entrada invalida.");
-
-      handleMenuLogicaProposicionalInput("3");
-    }
-  }
-  else if (strcmp(selectedOption, "4") == 0)
-  {
-    puts("Insira o valor de p (0 ou 1):");
-    scanf("%d", &p);
-
-    puts("Insira o valor de q (0 ou 1):");
-    scanf("%d", &q);
-
-    if (isValid(p) && isValid(q))
-    {
-      printf("%c", disjuncao(p, q));
-    }
-    else
-    {
-      puts("Ops, entrada invalida.");
-
-      handleMenuLogicaProposicionalInput("4");
-    }
-  }
-  else if (strcmp(selectedOption, "5") == 0)
-  {
-    puts("Insira o valor de p (0 ou 1):");
-    scanf("%d", &p);
-
-    puts("Insira o valor de q (0 ou 1):");
-    scanf("%d", &q);
-
-    if (isValid(p) && isValid(q))
-    {
-      printf("%c", disjuncaoExclusiva(p, q));
-    }
-    else
-    {
-      puts("Ops, entrada invalida.");
-
-      handleMenuLogicaProposicionalInput("5");
-    }
-  }
-  else if (strcmp(selectedOption, "6") == 0)
-  {
-    puts("Insira o valor de p (0 ou 1):");
-    scanf("%d", &p);
-
-    puts("Insira o valor de q (0 ou 1):");
-    scanf("%d", &q);
-
-    if (isValid(p) && isValid(q))
-    {
-      printf("%c", implicacao(p, q));
-    }
-    else
-    {
-      puts("Ops, entrada invalida.");
-
-      handleMenuLogicaProposicionalInput("6");
-    }
-  }
-  else if (strcmp(selectedOption, "7") == 0)
-  {
-    puts("Insira o valor de p (0 ou 1):");
-    scanf("%d", &p);
-
-    puts("Insira o valor de q (0 ou 1):");
-    scanf("%d", &q);
-
-    if (isValid(p) && isValid(q))
-    {
-      printf("%c", equivalencia(p, q));
-    }
-    else
-    {
-      puts("Ops, entrada invalida.");
-
-      handleMenuLogicaProposicionalInput("7");
-    }
-  }
-  else if (strcmp(selectedOption, "8") == 0)
-  {
-    showMainMenu();
+    puts("Ops, insira uma opcao valida:");
+    fflush(stdin);
+    getLogicaProposicionalInput();
   }
   else
   {
-    puts("Ops, insira uma opcao valida:");
+    handleLogicaProposicionalInput(selectedOption);
+  }
+}
 
-    getMenuLogicaProposicionalInput();
+void handleMenuLogicaProposicionalInput(unsigned char selectedOption)
+{
+  int p, q;
+
+  switch (selectedOption)
+  {
+  case 1:
+    puts("Insira o valor de p (0 ou 1):");
+    scanf("%d", &p);
+
+    printf("%c", negacao(p));
+    break;
+  case 2:
+    puts("Insira o valor de q (0 ou 1):");
+    scanf("%d", &q);
+
+    printf("%c", negacao(q));
+    break;
+  case 3:
+    puts("Insira o valor de p (0 ou 1):");
+    scanf("%d", &p);
+
+    puts("Insira o valor de q (0 ou 1):");
+    scanf("%d", &q);
+
+    printf("%c", conjuncao(p, q));
+    break;
+  case 4:
+    puts("Insira o valor de p (0 ou 1):");
+    scanf("%d", &p);
+
+    puts("Insira o valor de q (0 ou 1):");
+    scanf("%d", &q);
+
+    printf("%c", disjuncao(p, q));
+    break;
+  case 5:
+    puts("Insira o valor de p (0 ou 1):");
+    scanf("%d", &p);
+
+    puts("Insira o valor de q (0 ou 1):");
+    scanf("%d", &q);
+
+    printf("%c", disjuncaoExclusiva(p, q));
+    break;
+  case 6:
+    puts("Insira o valor de p (0 ou 1):");
+    scanf("%d", &p);
+
+    puts("Insira o valor de q (0 ou 1):");
+    scanf("%d", &q);
+
+    printf("%c", implicacao(p, q));
+    break;
+  case 7:
+    puts("Insira o valor de p (0 ou 1):");
+    scanf("%d", &p);
+
+    puts("Insira o valor de q (0 ou 1):");
+    scanf("%d", &q);
+
+    printf("%c", equivalencia(p, q));
+    break;
+  case 8:
+    showMainMenu();
+    break;
   }
 }
 
