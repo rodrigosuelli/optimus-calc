@@ -7,7 +7,7 @@
 
 void handleMenuLogicaProposicionalInput(char selectedOption[1]);
 
-char equivalencia(int p, int q)
+char equivalencia(unsigned char p, unsigned char q)
 {
   if (p == q)
     return 'V';
@@ -15,7 +15,7 @@ char equivalencia(int p, int q)
     return 'F';
 }
 
-char implicacao(int p, int q)
+char implicacao(unsigned char p, unsigned char q)
 {
   if (p == 1 && q == 0)
     return 'F';
@@ -23,7 +23,7 @@ char implicacao(int p, int q)
     return 'V';
 }
 
-char disjuncaoExclusiva(int p, int q)
+char disjuncaoExclusiva(unsigned char p, unsigned char q)
 {
   if (p != q)
     return 'V';
@@ -31,7 +31,7 @@ char disjuncaoExclusiva(int p, int q)
     return 'F';
 }
 
-char disjuncao(int p, int q)
+char disjuncao(unsigned char p, unsigned char q)
 {
   if (p == 0 && q == 0)
     return 'F';
@@ -39,7 +39,7 @@ char disjuncao(int p, int q)
     return 'V';
 }
 
-char conjuncao(int p, int q)
+char conjuncao(unsigned char p, unsigned char q)
 {
   if (p == 1 && q == 1)
     return 'V';
@@ -47,7 +47,7 @@ char conjuncao(int p, int q)
     return 'F';
 }
 
-char negacao(int n)
+char negacao(unsigned char n)
 {
   if (n == 1)
     return 'F';
@@ -55,7 +55,7 @@ char negacao(int n)
     return 'V';
 }
 
-bool isValid(int userInput)
+bool isValid(unsigned char userInput)
 {
   if (userInput != 0 && userInput != 1)
     return false;
