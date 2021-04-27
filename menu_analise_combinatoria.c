@@ -24,19 +24,12 @@ uint64_t arranjoRepeticao(int n, int k)
 
 uint64_t combinacaoSimples(int n, int k)
 {
-  uint64_t nFatorial = fatorial(n);
-  uint64_t kFatorial = fatorial(k);
-  uint64_t subtracaoFatorial = fatorial(n - k);
-
-  return nFatorial / (kFatorial * subtracaoFatorial);
+  return fatorial(n) / (fatorial(k) * fatorial(n - k));
 }
 
 uint64_t arranjoSimples(int n, int k)
 {
-  uint64_t nFatorial = fatorial(n);
-  uint64_t subtracaoFatorial = fatorial(n - k);
-
-  return nFatorial / subtracaoFatorial;
+  return fatorial(n) / fatorial(n - k);
 }
 
 uint64_t permutacaoSimples(int n)
