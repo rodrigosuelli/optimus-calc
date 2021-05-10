@@ -9,12 +9,51 @@
 
 void handleMenuAnaliseCombinatoriaInput(unsigned char selectedOption);
 
+unsigned int getInputAndCheckIsNatural(char message[])
+{
+  int n;
+  char enterKey;
+
+  puts(message);
+
+  if (scanf("%d%c", &n, &enterKey) != 2 || enterKey != '\n' || n < 0)
+  {
+    puts("Ops, entrada invalida.");
+    fflush(stdin);
+    getInputAndCheckIsNatural(message);
+  }
+  else
+  {
+    return n;
+  }
+}
+
 uint64_t fatorial(uint64_t n)
 {
   if (n == 0)
     return 1;
   else
     return n * fatorial(n - 1);
+}
+
+uint64_t permutacaoRepeticao()
+{
+  int n, k;
+  uint64_t multiplicacaoFatoriaisK = 1;
+
+  n = getInputAndCheckIsNatural("Insira a quantidade de elementos (numero natural):");
+
+  do
+  {
+    k = getInputAndCheckIsNatural("Insira a quantidade de vezes que determinado elemento se repete (insira 0 para sair e exibir o resultado):");
+
+    if (k != 0)
+    {
+      multiplicacaoFatoriaisK = multiplicacaoFatoriaisK * fatorial(k);
+    }
+  } while (k != 0);
+
+  return fatorial(n) / multiplicacaoFatoriaisK;
 }
 
 uint64_t combinacaoRepeticao(int n, int k)
@@ -42,25 +81,6 @@ uint64_t permutacaoSimples(int n)
   return fatorial(n);
 }
 
-unsigned int getInputAndCheckIsValid(char varName[1])
-{
-  int n;
-  char enterKey;
-
-  printf("Insira o valor de %s, sabendo que %s deve ser um numero natural:\n", varName, varName);
-
-  if (scanf("%d%c", &n, &enterKey) != 2 || enterKey != '\n' || n < 0)
-  {
-    puts("Ops, entrada invalida.");
-    fflush(stdin);
-    getInputAndCheckIsValid(varName);
-  }
-  else
-  {
-    return n;
-  }
-}
-
 void getMenuAnaliseCombinatoriaInput()
 {
   unsigned char selectedOption;
@@ -83,14 +103,9 @@ void handleMenuAnaliseCombinatoriaInput(unsigned char selectedOption)
   int n, k;
 
   if (selectedOption == 1)
-  {
-    n = getInputAndCheckIsValid("n");
-  }
-  else if (selectedOption != 7)
-  {
-    n = getInputAndCheckIsValid("n");
-    k = getInputAndCheckIsValid("k");
-  }
+    n = getInputAndCheckIsNatural("Insira o valor de n, sabendo que n deve ser um numero natural:");
+  else if (selectedOption <= 5)
+    k = getInputAndCheckIsNatural("Insira o valor de k, sabendo que k deve ser um numero natural:");
 
   switch (selectedOption)
   {
@@ -110,7 +125,7 @@ void handleMenuAnaliseCombinatoriaInput(unsigned char selectedOption)
     printf("Resultado: %llu", combinacaoRepeticao(n, k));
     break;
   case 6:
-    puts("Selecionou 6");
+    printf("Resultado: %llu", permutacaoRepeticao());
     break;
   case 7:
     showMainMenu();
