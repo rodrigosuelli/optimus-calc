@@ -51,7 +51,7 @@ char negacao(unsigned char n)
 {
   if (n == 1)
     return 'F';
-  else if (n == 0)
+  else
     return 'V';
 }
 
