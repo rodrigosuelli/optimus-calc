@@ -95,7 +95,7 @@ void handleMenuLogicaProposicionalInput(unsigned char selectedOption)
 {
   unsigned char p, q;
 
-  if (selectedOption != 2)
+  if (selectedOption != 2 && selectedOption < 8)
   {
     p = getInputAndCheckIsValid('p');
   }
