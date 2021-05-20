@@ -38,7 +38,7 @@ uint64_t fatorial(uint64_t n)
 
 uint64_t permutacaoRepeticao()
 {
-  int n, k;
+  unsigned int n, k;
   uint64_t multiplicacaoFatoriaisK = 1;
 
   n = getInputAndCheckIsNatural("Insira a quantidade de elementos (numero natural):");
@@ -56,27 +56,27 @@ uint64_t permutacaoRepeticao()
   return fatorial(n) / multiplicacaoFatoriaisK;
 }
 
-uint64_t combinacaoRepeticao(int n, int k)
+uint64_t combinacaoRepeticao(unsigned int n, unsigned int k)
 {
   return fatorial(n + k - 1) / (fatorial(k) * fatorial(n - 1));
 }
 
-uint64_t arranjoRepeticao(int n, int k)
+uint64_t arranjoRepeticao(unsigned int n, unsigned int k)
 {
   return pow(n, k);
 }
 
-uint64_t combinacaoSimples(int n, int k)
+uint64_t combinacaoSimples(unsigned int n, unsigned int k)
 {
   return fatorial(n) / (fatorial(k) * fatorial(n - k));
 }
 
-uint64_t arranjoSimples(int n, int k)
+uint64_t arranjoSimples(unsigned int n, unsigned int k)
 {
   return fatorial(n) / fatorial(n - k);
 }
 
-uint64_t permutacaoSimples(int n)
+uint64_t permutacaoSimples(unsigned int n)
 {
   return fatorial(n);
 }
@@ -100,7 +100,7 @@ void getMenuAnaliseCombinatoriaInput()
 
 void handleMenuAnaliseCombinatoriaInput(unsigned char selectedOption)
 {
-  int n, k;
+  unsigned int n, k;
 
   if (selectedOption < 6)
     n = getInputAndCheckIsNatural("Insira o valor de n, sabendo que n deve ser um numero natural:");

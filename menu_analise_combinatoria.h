@@ -3,4 +3,6 @@
 
 void showMenuAnaliseCombinatoria();
 
+unsigned long long fatorial(unsigned long long n);
+
 #endif // MENU_ANALISE_COMBINATORIA_H_INCLUDED

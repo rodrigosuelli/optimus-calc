@@ -55,7 +55,7 @@ char negacao(unsigned char n)
     return 'V';
 }
 
-unsigned char getInputAndCheckIsValid(char varName)
+unsigned char getInputAndCheckIsBoolean(char varName)
 {
   int p;
   char enterKey;
@@ -66,7 +66,7 @@ unsigned char getInputAndCheckIsValid(char varName)
   {
     puts("Ops, entrada invalida.");
     fflush(stdin);
-    getInputAndCheckIsValid(varName);
+    getInputAndCheckIsBoolean(varName);
   }
   else
   {
@@ -97,12 +97,12 @@ void handleMenuLogicaProposicionalInput(unsigned char selectedOption)
 
   if (selectedOption != 2 && selectedOption < 8)
   {
-    p = getInputAndCheckIsValid('p');
+    p = getInputAndCheckIsBoolean('p');
   }
 
   if (selectedOption > 1 && selectedOption < 8)
   {
-    q = getInputAndCheckIsValid('q');
+    q = getInputAndCheckIsBoolean('q');
   }
 
   switch (selectedOption)
