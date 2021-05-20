@@ -4,8 +4,8 @@
 
 ## Submenu Somátorio
 
-- [ ] Somatório de 𝑗 = 0 até 𝑛 para a regra 𝑗
-- [ ] Somatório de 𝑗 = 0 até 𝑛 para a regra (−𝑗)^(𝑗 + 1)
+- [x] Somatório de 𝑗 = 0 até 𝑛 para a regra 𝑗
+- [x] Somatório de 𝑗 = 0 até 𝑛 para a regra (−𝑗)^(𝑗 + 1)
 - [ ] Aproximação do número pi com somatório até 𝑛
 - [ ] Aproximação do neperiano por somatório até 𝑛
 
