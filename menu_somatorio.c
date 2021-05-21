@@ -6,7 +6,8 @@
 #include "menu_analise_combinatoria.h"
 #include "menu.h"
 
-int j, resultado;
+int j;
+double resultado;
 
 void handleMenuSomatorioInput(unsigned char selectedOption);
 
@@ -34,7 +35,7 @@ double aproximacaoPiSomatorio(unsigned int n)
 {
   for (j = 0; j <= n; j++)
   {
-    resultado += 8 / (4 * j + 1) * (4 * j + 3);
+    resultado += (double)8 / ((4 * j + 1) * (4 * j + 3));
   }
 
   return resultado;
@@ -44,7 +45,7 @@ double aproximacaoNeperianoSomatorio(unsigned int n)
 {
   for (j = 0; j <= n; j++)
   {
-    resultado += 1 / fatorial(j);
+    resultado += (double)1 / fatorial(j);
   }
 
   return resultado;
@@ -104,10 +105,10 @@ void handleMenuSomatorioInput(unsigned char selectedOption)
     printf("Resultado: %lld", somatorioDeJ2(n));
     break;
   case 3:
-    printf("Resultado: %0.2f", aproximacaoPiSomatorio(n));
+    printf("Resultado: %0.5f", aproximacaoPiSomatorio(n));
     break;
   case 4:
-    printf("Resultado: %0.2f", aproximacaoNeperianoSomatorio(n));
+    printf("Resultado: %0.5f", aproximacaoNeperianoSomatorio(n));
     break;
   case 5:
     showMainMenu();
