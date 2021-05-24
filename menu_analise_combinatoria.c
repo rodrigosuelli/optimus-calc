@@ -108,7 +108,7 @@ void handleMenuAnaliseCombinatoriaInput(unsigned char selectedOption)
   if (selectedOption > 1 && selectedOption < 6)
     k = getInputAndCheckIsNatural("Insira o valor de k, sabendo que k deve ser um numero natural:");
 
-  if (selectedOption == 2 || selectedOption == 3 && n < k)
+  if ((selectedOption == 2 || selectedOption == 3) && n < k)
   {
     puts("Ops, entrada invalida. O valor de n deve ser maior ou igual ao valor de k");
     handleMenuAnaliseCombinatoriaInput(selectedOption);
