@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include <stdbool.h>
 #include <stdint.h>
@@ -137,6 +138,13 @@ void handleMenuAnaliseCombinatoriaInput(unsigned char selectedOption)
   case 7:
     showMainMenu();
     break;
+  }
+
+  if (selectedOption != 7)
+  {
+    puts("");
+    system("pause");
+    showMenuAnaliseCombinatoria();
   }
 }
 

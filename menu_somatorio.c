@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <stdint.h>
 #include <math.h>
 
@@ -89,6 +90,7 @@ void getMenuSomatorioInput()
 
 void handleMenuSomatorioInput(unsigned char selectedOption)
 {
+  resultado = 0;
   unsigned int n;
 
   if (selectedOption < 5)
@@ -113,6 +115,13 @@ void handleMenuSomatorioInput(unsigned char selectedOption)
   case 5:
     showMainMenu();
     break;
+  }
+
+  if (selectedOption != 5)
+  {
+    puts("");
+    system("pause");
+    showMenuSomatorio();
   }
 }
 

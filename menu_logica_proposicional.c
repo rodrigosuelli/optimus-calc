@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include <stdbool.h>
 
@@ -131,6 +132,13 @@ void handleMenuLogicaProposicionalInput(unsigned char selectedOption)
   case 8:
     showMainMenu();
     break;
+  }
+
+  if (selectedOption != 8)
+  {
+    puts("");
+    system("pause");
+    showMenuLogicaProposicional();
   }
 }
 
