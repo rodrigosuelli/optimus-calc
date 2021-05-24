@@ -105,7 +105,7 @@ void handleMenuAnaliseCombinatoriaInput(unsigned char selectedOption)
 
   if (selectedOption < 6)
     n = getInputAndCheckIsNatural("Insira o valor de n, sabendo que n deve ser um numero natural:");
-  if (selectedOption > 1 && selectedOption < 7)
+  if (selectedOption > 1 && selectedOption < 6)
     k = getInputAndCheckIsNatural("Insira o valor de k, sabendo que k deve ser um numero natural:");
 
   if (selectedOption == 2 || selectedOption == 3 && n < k)
