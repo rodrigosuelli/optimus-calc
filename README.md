@@ -28,6 +28,34 @@
 - [x] Combinação com Repetição: 𝐶𝑅(𝑛, 𝑘)
 - [x] Permutação com Repetição: 𝑃(𝑛, 𝑘1, ⋯ , 𝑘𝑝)
 
+## Instalação
+
+### Clonando o Repositório
+
+```bash
+git clone https://github.com/rodrigosuelli/optimus-calc.git
+
+cd optimus-calc
+```
+
+### Compilando o projeto
+
+Compile todos os arquivos .c usando seu compilador
+
+```bash
+gcc *.c -o optimus-calc
+```
+
+### Rodando o arquivo executável
+
+```bash
+# Linux
+./optimus-calc
+
+# Windows
+optimus-calc
+```
+
 ## 🤔 Como contribuir
 
 1. Faça um fork desse repositório
