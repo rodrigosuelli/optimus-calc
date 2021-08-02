@@ -2,7 +2,8 @@
 
 #include "menu.h"
 
-void main()
+int main()
 {
   showMainMenu();
+  return 0;
 }
