@@ -30,6 +30,8 @@
 
 ## Instalação
 
+Caso apenas queira ver o projeto funcionando, baixe apenas o arquivo executável [optimus-calc.exe](https://github.com/rodrigosuelli/optimus-calc/raw/master/optimus-calc.exe) e rode ele pelo terminal como nesta [etapa](#rodando-o-arquivo-executável).
+
 ### Clonando o Repositório
 
 ```bash
