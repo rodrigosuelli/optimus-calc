@@ -29,7 +29,7 @@
 - [x] Permutação com Repetição: 𝑃(𝑛, 𝑘1, ⋯ , 𝑘𝑝)
 
 ## Instalação
-OBS: O projeto funcionará corretamente apenas no windows (usando MINGW) por conta do uso de comandos como ´system("pause")´ que só funcionam no windows.
+**OBS: O projeto funcionará corretamente apenas no windows (usando MINGW) por conta do uso de comandos como ´system("pause")´ que só funcionam no windows.**
 
 Caso apenas queira ver o projeto funcionando, baixe apenas o arquivo executável [optimus-calc.exe](https://github.com/rodrigosuelli/optimus-calc/raw/master/optimus-calc.exe) e rode ele pelo terminal como nesta [etapa](#rodando-o-arquivo-executável).
 
